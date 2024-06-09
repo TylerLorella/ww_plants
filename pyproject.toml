@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ww-plants"
+name = "src"
 version = "0.1.0"
 description = ""
 authors = ["TylerLorella <lorella.tyler@gmail.com>"]
@@ -7,6 +7,11 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+
+[tool.poetry.dev-dependencies]
+pytest = "^8.2.2"
+pip-audit = "^2.7.3"
+ruff = "^0.4.8"
 
 
 [build-system]

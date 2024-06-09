@@ -1,0 +1,30 @@
+
+pre-commit:
+  parallel: true
+  commands:
+    pylint:
+      glob: "*.py"
+      tags: python
+      run: poetry run ruff check
+    poetry-check:
+      glob: "poetry.lock, pyproject.toml"
+      tags: poetry, python
+      run: poetry check
+
+commit-msg:
+  commands:
+    conform:
+      tags: git, commit, lint
+      run: conform enforce
+
+pre-push:
+  parallel: true
+  commands:
+    pyaudit:
+      glob: "poetry.lock, pyproject.toml"
+      tags: python
+      run: poetry run pip-audit
+    pytest:
+      glob: "*.py, poetry.lock, pyproject.toml"
+      tags: python
+      run: poetry run pytest
