@@ -7,7 +7,7 @@ pre-commit:
       tags: python
       run: poetry run ruff check
     poetry-check:
-      glob: "poetry.lock, pyproject.toml"
+      glob: "{poetry.lock,pyproject.toml}"
       tags: poetry, python
       run: poetry check
 
@@ -21,10 +21,10 @@ pre-push:
   parallel: true
   commands:
     pyaudit:
-      glob: "poetry.lock, pyproject.toml"
+      glob: "{poetry.lock,pyproject.toml}"
       tags: python
       run: poetry run pip-audit
     pytest:
-      glob: "*.py, poetry.lock, pyproject.toml"
+      glob: "{*.py,poetry.lock,pyproject.toml}"
       tags: python
       run: poetry run pytest
