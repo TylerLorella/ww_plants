@@ -28,5 +28,8 @@ src = ["src", "test"]
 [tool.ruff.format]
 docstring-code-format = true
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 [lint]
 select = ["C", "D", "E", "F", "I", "N", "R", "W", "UP", "RUF"]
