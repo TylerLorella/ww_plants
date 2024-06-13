@@ -3,6 +3,8 @@ name = "src"
 version = "0.1.0"
 description = ""
 authors = ["TylerLorella <lorella.tyler@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/TylerLorella/ww_plants"
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -17,3 +19,14 @@ ruff = "^0.4.8"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+required-version = ">=0.4.0"
+src = ["src", "test"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[lint]
+select = ["C", "D", "E", "F", "I", "N", "R", "W", "UP", "RUF"]
